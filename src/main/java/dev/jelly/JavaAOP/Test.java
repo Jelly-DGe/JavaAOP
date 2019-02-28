@@ -24,12 +24,10 @@ public class Test {
                 }
             }
         });
+        
+        //say方法测试数据是否注入
         user.say();
-        String name = "用户名" + user.getName();
-        System.out.println(name);
-        user.setName("张三");
-        name = "用户名:" + user.getName();
-        System.out.println(name);
-        user.getSex();
+        //测试getSex方法前后是否打印切入的方法
+        System.out.println(user.getSex());
     }
 }
