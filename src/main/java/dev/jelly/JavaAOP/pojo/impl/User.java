@@ -22,7 +22,7 @@ public class User implements UserInterface {
 
     @MyAnnotation(property = "男")
     @Override
-    public void setSex(String Sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -33,6 +33,6 @@ public class User implements UserInterface {
 
     @Override
     public void say() {
-        System.out.print(this.getName() + "  " + this.getSex());
+        System.out.println(this.getName() + "  " + this.getSex());
     }
 }

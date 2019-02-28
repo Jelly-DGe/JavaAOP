@@ -24,7 +24,7 @@ public class Test {
                 }
             }
         });
-        
+
         //say方法测试数据是否注入
         user.say();
         //测试getSex方法前后是否打印切入的方法

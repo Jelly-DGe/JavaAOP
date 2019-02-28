@@ -9,17 +9,17 @@ import java.lang.reflect.Proxy;
 public class UserFactory {
 
     /**
-     * 获取对象方法
+     * 生成代理对象
      *
      * @param obj
      * @param method
      * @return
      */
-    private static Object getUserBase(Object obj,AOPMethod method){
+    private static Object getUserBase(Object obj, AOPMethod method) {
         //获取代理对象
         return Proxy.newProxyInstance(obj.getClass().getClassLoader(),
                 obj.getClass().getInterfaces(),
-                new AOPHandle(AnnoInjection.getBean(obj),method));
+                new AOPHandle(AnnoInjection.getBean(obj), method));
     }
 
     public static <T> T getUser(Object obj, AOPMethod method) {
@@ -36,13 +36,13 @@ public class UserFactory {
         return (T) obj;
     }
 
-    public static  <T> T  getUser(Class<?> clz,AOPMethod method){
-        Object obj=null;
+    public static <T> T getUser(Class<?> clz, AOPMethod method) {
+        Object obj = null;
         try {
-            obj= getUserBase(clz.newInstance(),method);
+            obj = getUserBase(clz.newInstance(), method);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return (T)obj;
+        return (T) obj;
     }
 }

@@ -24,7 +24,7 @@ public class AOPHandle implements InvocationHandler {
     /**
      * 自动调用java的动态代理机制(面向接口)
      *
-     * @param proxy  代理对象的接口,不同于对象
+     * @param proxy  被代理对象
      * @param method 被调用方法
      * @param args   方法参数
      * @return
